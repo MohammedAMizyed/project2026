@@ -5,5 +5,13 @@
   "userName": "Username",
   "Enter User name": "Enter User name",
   "password": "Password",
-  "Enter Password": "Enter Password"
+  "Enter Password": "Enter Password",
+  "The name is required": "The name is required",
+  "The name is too short": "The name is too short",
+  "Password must be at least 6 characters": "Password must be at least 6 characters",
+  "There is something went wrong please true again later": "There is something went wrong please true again later",
+  "LogInSuccess": "LogIn Successfuly ",
+  "Request": "Request",
+  "Blogs": "Blogs",
+  "News and Updates": "News and updates"
 }

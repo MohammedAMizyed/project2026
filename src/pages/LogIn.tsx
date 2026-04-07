@@ -1,6 +1,6 @@
 import background from "../assets/Rectangle 240663856.svg"
 import logo from "../assets/Group 351.svg"
-import FormLogIn from "../components/FormLogIn"
+import FormLogIn from "../components/LogInForm"
 
 export default function LogIn() {
   return (

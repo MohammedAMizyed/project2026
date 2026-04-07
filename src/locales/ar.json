@@ -5,5 +5,13 @@
   "userName": "اسم المستخدم",
   "Enter User name": "أدخل اسم المستخدم",
   "password": "كلمة المرور",
-  "Enter Password": "أدخل كلمة المرور"
+  "Enter Password": "أدخل كلمة المرور",
+  "The name is required": "الاسم مطلوب",
+  "The name is too short": "الاسم قصير جدًا",
+  "Password must be at least 6 characters": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+  "There is something went wrong please true again later": "هناك خطأ ما، يرجى التحقق مرة أخرى في وقت لاحق",
+  "LogInSuccess": "تم تسجيل الدخول بنجاح",
+  "Request": "طلب",
+  "Blogs": "مدونات",
+  "News and Updates": "الأخبار والتحديثات"
 }
