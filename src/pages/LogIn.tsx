@@ -1,5 +1,5 @@
 import background from "../assets/Rectangle 240663856.svg"
-import logo from "../assets/Group 351.svg"
+import logo from "../assets/Group 351 (1).svg"
 import FormLogIn from "../components/LogInForm"
 
 export default function LogIn() {
@@ -14,7 +14,7 @@ export default function LogIn() {
       <div className=" w-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
         <div className="flex sm:flex-row flex-col gap-2 items-center  ">
           <div className="w-[50%] flex justify-center items-center">
-            <img className="  object-contain" src={logo} alt="logo" />
+            <img className="object-contain" src={logo} alt="logo" />
           </div>
           <div className="w-[50%] border-l-2  border-[#230871] pl-5 text-white max-w-[540px]   ">
             <FormLogIn />

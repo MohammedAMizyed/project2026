@@ -3,43 +3,43 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
 import "@mantine/core/styles.css"
-import { MantineProvider, TextInput, createTheme } from "@mantine/core"
+import { MantineProvider } from "@mantine/core"
 import "./i18n"
 import { BrowserRouter } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const queryClient = new QueryClient()
-export const theme = createTheme({
-  components: {
-    TextInput: TextInput.extend({
-      defaultProps: {
-        variant: "default",
-      },
+// export const theme = createTheme({
+//   components: {
+//     TextInput: TextInput.extend({
+//       defaultProps: {
+//         variant: "default",
+//       },
 
-      styles: {
-        label: {
-          marginBottom: "8px",
-          display: "block",
-          color: "white",
-        },
+//       styles: {
+//         label: {
+//           marginBottom: "8px",
+//           display: "block",
+//           color: "white",
+//         },
 
-        input: {
-          width: "100%",
-          backgroundColor: "#58449375",
-          borderRadius: "12px",
-          border: "none",
-          padding: "8px 12px",
-          margin: "8px 0",
-          color: "white",
-        },
-      },
-    }),
-  },
-})
+//         input: {
+//           width: "100%",
+//           backgroundColor: "#58449375",
+//           borderRadius: "12px",
+//           border: "none",
+//           padding: "8px 12px",
+//           margin: "8px 0",
+//           color: "white",
+//         },
+//       },
+//     }),
+//   },
+// })
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <MantineProvider theme={theme}>
+      <MantineProvider>
         <QueryClientProvider client={queryClient}>
           <App />
         </QueryClientProvider>

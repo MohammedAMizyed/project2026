@@ -1,13 +1,10 @@
-import ChangeLang from "../components/ChangeLang"
+// import ChangeLang from "../components/ChangeLang"
 import Dashboard from "../components/Dashboard"
 
 export default function Home() {
   return (
     <div className="flex">
       <Dashboard />
-      <div>
-        <ChangeLang />
-      </div>
     </div>
   )
 }

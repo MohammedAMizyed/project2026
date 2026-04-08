@@ -6,8 +6,8 @@ import note from "../assets/note.svg"
 import { useState } from "react"
 import { cn } from "../lib/utils"
 import Blogs from "../pages/Blogs"
-import Request from "../pages/Request"
 import News from "../pages/News"
+import Request from "../pages/Request"
 export default function Dashboard() {
   const { t } = useTranslation()
   const [activeItem, setActiveItem] = useState<number>(1)
@@ -15,12 +15,12 @@ export default function Dashboard() {
     setActiveItem(id)
   }
   const pages = [
-    { id: 1, title: t("Request"), icon: blogs },
-    { id: 2, title: t("Blogs"), icon: requerst },
-    { id: 3, title: t("News and Updates"), icon: note },
+    { id: 1, title: t("Request"), icon: requerst, component: <Request /> },
+    { id: 2, title: t("Blogs"), icon: blogs, component: <Blogs /> },
+    { id: 3, title: t("News and Updates"), icon: note, component: <News /> },
   ]
   return (
-    <>
+    <div className="flex w-full">
       <div className="bg-[#F5F5F7] p-2 h-screen max-w-[220px]">
         <div className="p-5">
           <img className="object-contain " src={logo} alt="logo" />
@@ -41,9 +41,12 @@ export default function Dashboard() {
           )
         })}
       </div>
-      {activeItem === 1 && <Request />}
-      {activeItem === 2 && <Blogs />}
-      {activeItem === 3 && <News />}
-    </>
+      <div className="flex-1 p-5">
+        {pages.find((item) => item.id === activeItem)?.component}
+        {/* {activeItem === 1 && <Request />}
+        {activeItem === 2 && <Blogs />}
+        {activeItem === 3 && <News />} */}
+      </div>
+    </div>
   )
 }

@@ -40,6 +40,22 @@ export default function FormLogIn() {
       },
     )
   }
+  const inputStyles = {
+    label: {
+      marginBottom: "8px",
+      display: "block",
+      color: "white",
+    },
+    input: {
+      width: "100%",
+      backgroundColor: "#58449375",
+      borderRadius: "12px",
+      border: "none",
+      padding: "8px 12px",
+      margin: "8px 0",
+      color: "white",
+    },
+  }
   return (
     <>
       <div className="flex justify-between">
@@ -58,6 +74,7 @@ export default function FormLogIn() {
           key={form.key("name")}
           {...form.getInputProps("name")}
           className="my-5"
+          styles={inputStyles}
         />
         <TextInput
           label={t("password")}
@@ -65,6 +82,7 @@ export default function FormLogIn() {
           type="password"
           key={form.key("password")}
           {...form.getInputProps("password")}
+          styles={inputStyles}
         />
         <Button
           loading={isPending}
