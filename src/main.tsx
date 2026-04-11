@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
 import "@mantine/core/styles.css"
-import { MantineProvider } from "@mantine/core"
+import { Button, createTheme, MantineProvider } from "@mantine/core"
 import "./i18n"
 import { BrowserRouter } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
@@ -36,10 +36,35 @@ const queryClient = new QueryClient()
 //     }),
 //   },
 // })
+
+const theme = createTheme({
+  components: {
+    Button: Button.extend({
+      styles: (theme, props) => {
+        if (props.variant === "primary") {
+          return {
+            root: {
+              backgroundColor: "#230871",
+              color: "#fff",
+              padding: "10px 16px",
+              borderRadius: "12px",
+
+              "&:hover": {
+                backgroundColor: "#1a065a",
+              },
+            },
+          }
+        }
+
+        return {}
+      },
+    }),
+  },
+})
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <MantineProvider>
+      <MantineProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <App />
         </QueryClientProvider>

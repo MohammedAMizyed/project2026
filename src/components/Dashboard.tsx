@@ -21,7 +21,7 @@ export default function Dashboard() {
   ]
   return (
     <div className="flex w-full">
-      <div className="bg-[#F5F5F7] p-2 h-screen max-w-[220px]">
+      <div className="bg-[#F5F5F7] p-2 fixed top-0 left-0  h-screen max-w-[220px]">
         <div className="p-5">
           <img className="object-contain " src={logo} alt="logo" />
         </div>
@@ -41,7 +41,7 @@ export default function Dashboard() {
           )
         })}
       </div>
-      <div className="flex-1 p-5">
+      <div className="flex-1 p-5 ml-52">
         {pages.find((item) => item.id === activeItem)?.component}
         {/* {activeItem === 1 && <Request />}
         {activeItem === 2 && <Blogs />}
