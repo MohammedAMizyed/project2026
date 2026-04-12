@@ -7,7 +7,7 @@ const fetchingData = async () => {
   return response.data
 }
 
-export const useUserBlogs = () => {
+export const useBlogs = () => {
   return useQuery({
     queryKey: ["blogs"],
     queryFn: () => fetchingData(),

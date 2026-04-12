@@ -8,6 +8,7 @@ import { cn } from "../lib/utils"
 import Blogs from "../pages/Blogs"
 import News from "../pages/News"
 import Request from "../pages/Request"
+import AddBlog from "../pages/AddBlog"
 export default function Dashboard() {
   const { t } = useTranslation()
   const [activeItem, setActiveItem] = useState<number>(1)
@@ -42,6 +43,7 @@ export default function Dashboard() {
         })}
       </div>
       <div className="flex-1 p-5 ml-52">
+        {/* <AddBlog /> */}
         {pages.find((item) => item.id === activeItem)?.component}
         {/* {activeItem === 1 && <Request />}
         {activeItem === 2 && <Blogs />}

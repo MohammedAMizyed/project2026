@@ -16,7 +16,7 @@ export default function BlogCard({
   img,
 }: Props) {
   return (
-    <div className="border-[#EBEBEF] border rounded-[12px]">
+    <div className="">
       <div className="border-b-1 p-5 border-[#DFDEDC] flex justify-between gap-2 items-center ">
         <h1>Blog 1</h1>
         <div className="flex gap-3">
@@ -41,7 +41,7 @@ export default function BlogCard({
           alt=""
         />
         <div>
-          <h3 className={"text-[14px] font-medium"}>{title}</h3>
+          <h3 className={"text-[14px] font-medium "}>{title}</h3>
           <h4 className="text-[#2B261E] text-[16px] font-medium">{desc}</h4>
           <p className="text-[#817C74] text-[14px] font-medium">
             {description}

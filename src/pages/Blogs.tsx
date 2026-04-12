@@ -2,11 +2,11 @@ import { Button } from "@mantine/core"
 import Header from "../components/Header"
 import { useTranslation } from "react-i18next"
 import { MdAdd } from "react-icons/md"
-import { useUserBlogs } from "../hooks/useUserBlogs"
+import { useBlogs } from "../hooks/useBlogs"
 import BlogCard from "../components/BlogCard"
 export default function Blogs() {
   const { t } = useTranslation()
-  const { data } = useUserBlogs()
+  const { data } = useBlogs()
   return (
     <div>
       <Header title="Blogs" />
@@ -23,7 +23,10 @@ export default function Blogs() {
       <div className="flex flex-wrap justify-between  items-stretch gap-5">
         {data?.data.items.data.map((item) => {
           return (
-            <div key={item.id} className="basis-[31%]">
+            <div
+              key={item.id}
+              className="basis-[31%] border-[#EBEBEF] border rounded-[12px]"
+            >
               <BlogCard
                 title={item.title}
                 desc={item.short_description}

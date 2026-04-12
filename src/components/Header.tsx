@@ -1,6 +1,7 @@
+import React from "react"
 import { InputWithButton } from "./InputWithButton"
 type Props = {
-  title: string
+  title: React.ReactNode | string
 }
 export default function Header({ title }: Props) {
   return (
