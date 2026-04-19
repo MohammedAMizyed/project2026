@@ -1,12 +1,16 @@
 import { Button } from "@mantine/core"
 import { MdEdit } from "react-icons/md"
+
 import { RiDeleteBin6Line } from "react-icons/ri"
+import { useDeleteBlog } from "../hooks/useDeleteBlog"
 type Props = {
   title: string
   desc?: string
   description?: string
   date: string
   img: string
+  num: number
+  id: number | string
 }
 export default function BlogCard({
   title,
@@ -14,23 +18,31 @@ export default function BlogCard({
   description,
   date,
   img,
+  num,
+  id,
 }: Props) {
+  const { mutate } = useDeleteBlog()
   return (
     <div className="">
       <div className="border-b-1 p-5 border-[#DFDEDC] flex justify-between gap-2 items-center ">
-        <h1>Blog 1</h1>
+        <h1>Blog {num}</h1>
         <div className="flex gap-3">
           <div>unHide</div>
-          <div>
-            <Button variant={"primary"}>
-              <MdEdit />
-            </Button>
-          </div>
-          <div>
-            <Button variant={"primary"}>
-              <RiDeleteBin6Line />
-            </Button>
-          </div>
+          <Button variant={"primary"}>
+            <MdEdit />
+          </Button>
+          <Button
+            onClick={() => {
+              mutate(id, {
+                onSuccess: () => {
+                  window.location.reload()
+                },
+              })
+            }}
+            variant={"primary"}
+          >
+            <RiDeleteBin6Line />
+          </Button>
         </div>
       </div>
 

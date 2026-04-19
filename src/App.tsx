@@ -4,7 +4,14 @@ import { useTranslation } from "react-i18next"
 // import ChangeLang from "./components/ChangeLang"
 import { Routes, Route } from "react-router-dom"
 import LogIn from "./pages/LogIn"
-import Home from "./pages/Home"
+import "@mantine/core/styles.css"
+import "@mantine/dropzone/styles.css"
+import Request from "./pages/Request"
+import Blogs from "./pages/Blogs"
+import AddBlog from "./pages/AddBlog"
+import News from "./pages/News"
+import Dashboard from "./components/Dashboard"
+
 function App() {
   const { i18n } = useTranslation()
 
@@ -14,12 +21,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Dashboard />}>
+          <Route path="/request" element={<Request />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/add" element={<AddBlog />} />
+          <Route path="/news" element={<News />} />
+        </Route>{" "}
         <Route path="login" element={<LogIn />} />
       </Routes>
-      {/* <Button>Hello Mantine 🚀</Button>
-      <h1>{t("welcome")}</h1>
-      <ChangeLang /> */}
     </>
   )
 }

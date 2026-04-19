@@ -11,11 +11,11 @@ export default function FormLogIn() {
   const { mutate, isPending, isError, isSuccess } = useLogIn()
   const form = useForm({
     initialValues: {
-      name: "",
+      email: "",
       password: "",
     },
     validate: {
-      name: (value: string) =>
+      email: (value: string) =>
         !value
           ? t("The name is required")
           : value.length < 3
@@ -28,10 +28,10 @@ export default function FormLogIn() {
   })
   const handleSubmit = (values: typeof form.values) => {
     mutate(
-      { password: values.password, mobile: "966508570275" },
+      { password: values.password, email: values.email },
       {
         onSuccess: (data) => {
-          localStorage.setItem("accessTaken", data.data.token)
+          localStorage.setItem("accessToken", data.data.token)
           navigate("/")
         },
         onError: (error) => {
@@ -69,10 +69,10 @@ export default function FormLogIn() {
       </div>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
-          label="Username"
-          placeholder={t("Enter User name")}
-          key={form.key("name")}
-          {...form.getInputProps("name")}
+          label="Email"
+          placeholder={t("Enter your Email ")}
+          key={form.key("email")}
+          {...form.getInputProps("email")}
           className="my-5"
           styles={inputStyles}
         />

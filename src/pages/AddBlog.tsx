@@ -3,7 +3,7 @@ import { FaArrowLeft } from "react-icons/fa"
 import Header from "../components/Header"
 import { Button } from "@mantine/core"
 import AddBlogForm from "../components/AddBlogForm"
-
+import { Link } from "react-router-dom"
 export default function AddBlog() {
   const { t } = useTranslation()
   return (
@@ -12,12 +12,14 @@ export default function AddBlog() {
         title={
           <div className="flex justify-center items-center gap-3">
             {" "}
-            <Button
-              variant="outline"
-              className="border-[#817C74]! border!  rounded-[50%]! w-7! h-7! p-0! bg-none!"
-            >
-              <FaArrowLeft color="#817C74" />
-            </Button>
+            <Link to={"/blogs"}>
+              <Button
+                variant="outline"
+                className="border-[#817C74]! border!  rounded-[50%]! w-7! h-7! p-0! bg-none!"
+              >
+                <FaArrowLeft color="#817C74" />
+              </Button>
+            </Link>
             {t("add new blog")}
           </div>
         }

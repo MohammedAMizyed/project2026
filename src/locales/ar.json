@@ -16,5 +16,15 @@
   "News and Updates": "الأخبار والتحديثات",
   "Search questions": "أسئلة البحث",
   "Blogs Details": "تفاصيل المدونات",
-  "add new blog": "إضافة مدونة جديدة"
+  "add new blog": "إضافة مدونة جديدة",
+  "Delete file": "حذف الملف",
+  "Reupload": "إعادة تحميل",
+  "Browse": "تصفح",
+  "Enter your Email ": "أدخل بريدك الإلكتروني",
+  "the tag is requeird": "العلامة مطلوبة",
+  "the content is requeird": "المحتوى مطلوب",
+  "the description is required": "الوصف مطلوب",
+  "the date is requeird": "التاريخ مطلوب",
+  "Add New Blog": "أضف مدونة جديدة",
+  "News": "أخبار"
 }

@@ -3,7 +3,7 @@ import { api } from "../api"
 import type { BlogsResponse } from "../types/BlogsUserTypeResponse"
 
 const fetchingData = async () => {
-  const response = await api<BlogsResponse>("guest/blogs")
+  const response = await api<BlogsResponse>("admin/blogs")
   return response.data
 }
 

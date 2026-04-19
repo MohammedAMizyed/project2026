@@ -3,11 +3,11 @@ import { api } from "../api"
 import type { LogInTypeResponse } from "../types/LogInTypeResponse"
 
 type Data = {
-  mobile: string
+  email: string
   password: string
 }
 const postData = async (data: Data) => {
-  const response = await api.post<LogInTypeResponse>("/guest/user/login", data)
+  const response = await api.post<LogInTypeResponse>("/guest/admin/login", data)
   return response.data
 }
 
